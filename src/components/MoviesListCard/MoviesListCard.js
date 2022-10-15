@@ -1,7 +1,6 @@
 import css from './MoviesListCard.module.css'
 
 
-
 const MoviesListCard = ({movie}) => {
 
     const{id, title, vote_average} = movie
