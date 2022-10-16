@@ -1,30 +1,39 @@
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {movieActions} from "../../redux/slices";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 
 import css from './MoviesList.module.css'
+import {Pagination} from "../Pagination/Pagination";
 
 
 const MoviesList = () => {
 
-    const {movies, loading, errors, search} = useSelector(state => state.movieReducer)
+    const [currentPage, setCurrentPage] = useState();
 
-    const dispatch =useDispatch()
+    const {movies, loading, errors} = useSelector(state => state.movieReducer)
+
+    const dispatch = useDispatch()
 
     useEffect(()=>{
-        dispatch(movieActions.getAll())
-    },[dispatch])
+        dispatch(movieActions.getAll({currentPage}))
+    },[dispatch, currentPage])
 
-    console.log(search)
+    const paginate = (pageNumber) =>{
+        setCurrentPage(pageNumber)
+    }
+
+    console.log(movies)
 
     return (
-        <div className={css.container}>
-
-            {errors && <h3>{JSON.stringify(errors)}</h3>}
-            {loading && <h3>Loading...</h3>}
-
-            {movies && movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+        <div>
+            <div className={css.container}>
+                {errors && <h3>{JSON.stringify(errors)}</h3>}
+                {movies.results && movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+                {loading? <h3>Loading...</h3>
+                    :
+                    <Pagination  paginate={paginate}/>}
+            </div>
         </div>
     );
 };

@@ -7,9 +7,11 @@ import {MoviesListPage, NotFoundPage} from "./pages";
 function App() {
   return (
     <Routes>
-        <Route path={'/'} element={<MoviesPage/>} >
+        <Route path={'/'} element={<MoviesPage/>}>
             <Route index element={<Navigate to={'MoviesListPage'}/>}/>
-            <Route path={'MoviesListPage'} element={<MoviesListPage/>}/>
+            <Route path={'MoviesListPage'} element={<MoviesListPage/>}>
+                <Route path={'page/:number'} element={<MoviesListPage/>}/>
+            </Route>
         </Route>
             <Route path={'*'} element={<NotFoundPage/>}/>
     </Routes>

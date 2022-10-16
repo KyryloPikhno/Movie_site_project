@@ -1,6 +1,10 @@
 import {Header} from "../components";
 import {MoviesListPage} from "../pages";
 import css from './MoviesPage.module.css'
+import {Outlet} from "react-router-dom";
+
+
+
 
 const MoviesPage = () => {
 
@@ -11,7 +15,8 @@ const MoviesPage = () => {
                  <Header/>
             </div>
             <div>
-                  <MoviesListPage/>
+                {/*<MoviesListPage/>*/}
+                <Outlet/>
             </div>
         </div>
     );

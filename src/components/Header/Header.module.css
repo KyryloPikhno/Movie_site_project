@@ -1,9 +1,15 @@
-.header{
+.header,.headerOrange{
     width: 100%;
     background: grey;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 50px;
     position: fixed;
     left: 0;
     top: 0;
+}
+
+.headerOrange{
+    background: orange;
 }
