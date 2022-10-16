@@ -8,7 +8,7 @@ import css from './MoviesList.module.css'
 
 const MoviesList = () => {
 
-    const {movies, loading, errors} = useSelector(state => state.movieReducer)
+    const {movies, loading, errors, search} = useSelector(state => state.movieReducer)
 
     const dispatch =useDispatch()
 
@@ -16,13 +16,15 @@ const MoviesList = () => {
         dispatch(movieActions.getAll())
     },[dispatch])
 
-    console.log(movies.results);
+    console.log(search)
 
     return (
         <div className={css.container}>
+
             {errors && <h3>{JSON.stringify(errors)}</h3>}
             {loading && <h3>Loading...</h3>}
-            {movies.results && movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+
+            {movies && movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
         </div>
     );
 };
