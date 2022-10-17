@@ -30,10 +30,10 @@ const MoviesList = () => {
             <div className={css.container}>
                 {errors && <h3>{JSON.stringify(errors)}</h3>}
                 {movies.results && movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+            </div>
                 {loading? <h3>Loading...</h3>
                     :
-                    <Pagination  paginate={paginate}/>}
-            </div>
+                    <Pagination paginate={paginate}/>}
         </div>
     );
 };

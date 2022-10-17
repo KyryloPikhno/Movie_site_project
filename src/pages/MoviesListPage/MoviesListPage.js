@@ -6,7 +6,6 @@ const MoviesListPage = () => {
     return (
         <div>
             <MoviesList/>
-
         </div>
     );
 };
