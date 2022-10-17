@@ -1,7 +1,8 @@
+import {useDispatch, useSelector} from "react-redux";
+
+import {movieActions} from "../../redux/slices";
 import {MoviesSearchForm} from "../MoviesSearchForm/MoviesSearchForm";
 import css from './Header.module.css'
-import {useDispatch, useSelector} from "react-redux";
-import {movieActions} from "../../redux/slices";
 
 
 const Header = () => {
@@ -13,10 +14,10 @@ const Header = () => {
     console.log(theme);
 
     return (
-        <div className={theme? css.header : css.headerOrange}>
-            <MoviesSearchForm/>
+        <div className={theme? css.headerOrange : css.header}>
+                <button onClick={()=>dispatch(movieActions.changeTheme(true))}>change theme</button>
             <div>
-                <button onClick={()=>dispatch(movieActions.changeTheme(false))}>change theme</button>
+            <MoviesSearchForm/>
             </div>
         </div>
     );

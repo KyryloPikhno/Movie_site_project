@@ -1,14 +1,26 @@
+import PrettyRating from "pretty-rating-react";
+import {faStar, faStarHalfAlt} from "@fortawesome/free-solid-svg-icons";
+import {faStar as farStar} from "@fortawesome/free-regular-svg-icons";
 
 
-
-const StarsRating = () => {
-
-    return (
-            <div>
-
-            </div>
-    );
+const icons = {
+    star: {
+        complete: faStar,
+        half: faStarHalfAlt,
+        empty: farStar,
+    }
 };
 
-export {StarsRating};
+const colors = {
+    star: ['#ffd446', '#ffd446', '#909799']
+};
+
+const StarsRating = ({vote_average}) => (
+
+    <div>
+        <PrettyRating  value={vote_average} icons={icons.star} setColors={colors.star} max={10}  array={colors.star} colors={colors.star}/>
+    </div>
+);
+
+export {StarsRating}
 

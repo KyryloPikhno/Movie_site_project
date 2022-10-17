@@ -1,12 +1,10 @@
-import {Header} from "../components";
-import {MoviesListPage} from "../pages";
-import css from './MoviesPage.module.css'
 import {Outlet} from "react-router-dom";
 
+import {Header} from "../components";
+import css from './MoviesPage.module.css'
 
 
-
-const MoviesPage = () => {
+const MeinMoviesPage = () => {
 
 
     return (
@@ -15,11 +13,10 @@ const MoviesPage = () => {
                  <Header/>
             </div>
             <div>
-                {/*<MoviesListPage/>*/}
                 <Outlet/>
             </div>
         </div>
     );
 };
 
-export {MoviesPage};
+export {MeinMoviesPage};

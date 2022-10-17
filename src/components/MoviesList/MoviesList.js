@@ -1,17 +1,20 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {movieActions} from "../../redux/slices";
-import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 
-import css from './MoviesList.module.css'
+import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
+import {movieActions} from "../../redux/slices";
 import {Pagination} from "../Pagination/Pagination";
+import css from './MoviesList.module.css'
 
 
 const MoviesList = () => {
 
     const [currentPage, setCurrentPage] = useState();
 
-    const {movies, loading, errors} = useSelector(state => state.movieReducer)
+    const {movies, loading, errors, searchResult} = useSelector(state => state.movieReducer)
+
+    let searchTotalPages = searchResult.total_pages
+    let movieTotalPages = movies.total_pages
 
     const dispatch = useDispatch()
 
@@ -19,22 +22,24 @@ const MoviesList = () => {
         dispatch(movieActions.getAll({currentPage}))
     },[dispatch, currentPage])
 
-    const paginate = (pageNumber) =>{
+    const paginate = (pageNumber) => {
         setCurrentPage(pageNumber)
     }
 
-    console.log(movies)
+    console.log(searchResult);
+    console.log(currentPage)
 
     return (
-        <div>
-            <div className={css.container}>
-                {errors && <h3>{JSON.stringify(errors)}</h3>}
-                {movies.results && movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+            <div>
+                <div className={css.container}>
+                    {errors && <h3>{JSON.stringify(errors)}</h3>}
+                    {movies.results && movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+                    {searchResult.results && searchResult.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+                </div>
+            {loading? <h3>Loading...</h3>
+                :
+                <Pagination paginate={paginate} searchTotalPages={searchTotalPages} movieTotalPages={movieTotalPages}/>}
             </div>
-                {loading? <h3>Loading...</h3>
-                    :
-                    <Pagination paginate={paginate}/>}
-        </div>
     );
 };
 

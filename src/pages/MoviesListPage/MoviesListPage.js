@@ -1,5 +1,6 @@
 import {MoviesList} from "../../components";
 
+
 const MoviesListPage = () => {
 
 

@@ -1,9 +1,16 @@
+import {useLocation} from "react-router-dom";
+
+
 const MovieInfo = () => {
 
+    const {state} = useLocation()
 
+    const {id, title} = state
+    // console.log(state);
     return (
         <div>
-            MovieInfo
+            <p>id: {id}</p>
+            <p>title: {title}</p>
         </div>
     );
 };

@@ -1,17 +1,24 @@
 import {NavLink} from "react-router-dom";
+
 import css from './Pagination.module.css'
 
-const Pagination = ({paginate}) => {
+
+const Pagination = ({paginate, searchTotalPages, movieTotalPages}) => {
     const pageNumbers = [];
 
-    for (let i = 1; i <= Math.ceil(  500); i++) {
+
+
+    // в этой API более 30 000 страниц, но работают всего 500
+    movieTotalPages = 500
+
+    for (let i = 1; i <= Math.ceil(searchTotalPages || movieTotalPages); i++) {
         pageNumbers.push(i);
     }
 
     return (
             <div className={css.pagination}>
                 {pageNumbers.map(number => (
-                    <NavLink to={`page/${number}`} key={number}>
+                    <NavLink to={`/page/${number}`}  key={number}>
                         <div onClick={() => paginate(number)}>
                             {number}
                         </div>

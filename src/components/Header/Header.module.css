@@ -1,6 +1,7 @@
 .header,.headerOrange{
+    border-bottom:2px solid orange;
     width: 100%;
-    background: grey;
+    background: #323232;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -11,5 +12,20 @@
 }
 
 .headerOrange{
+    background: orange;
+}
+
+.header input {
+    background: #1d1d1d;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 5px;
+    text-align: center;
+    color: #d6d6d6;
+    height: 20px;
+    width: 220px;
+}
+
+.header button{
     background: orange;
 }
