@@ -2,21 +2,26 @@
     display: flex;
     gap: 1px;
     overflow: auto;
-    width: 1110px;
-    overflow-x: scroll;
+    width: 440px;
     margin: 25px auto;
-    border-radius: 6px;
 }
 
-.pagination a{
+.pagination::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+
+.pagination a {
     padding: 5px;
     text-decoration: none;
     background:snow;
     color: black;
     font-size: 15px;
     border: 1px solid black;
-    border-radius: 6px;
 }
+
+
 
 .pagination a:hover{
     background:orange ;

@@ -29,6 +29,7 @@ const MoviesList = () => {
     console.log(searchResult);
     console.log(currentPage)
 
+
     return (
             <div>
                 <div className={css.container}>
@@ -36,9 +37,11 @@ const MoviesList = () => {
                     {movies.results && movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
                     {searchResult.results && searchResult.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
                 </div>
-            {loading? <h3>Loading...</h3>
+            {
+                loading? <h1>Loading...</h1>
                 :
-                <Pagination paginate={paginate} searchTotalPages={searchTotalPages} movieTotalPages={movieTotalPages}/>}
+                     <Pagination paginate={paginate} searchTotalPages={searchTotalPages} movieTotalPages={movieTotalPages}/>
+                  }
             </div>
     );
 };

@@ -39,9 +39,12 @@ const movieSlice = createSlice({
     name: 'movieSlice',
     initialState,
     reducers: {
+            // choiceGenre: (state, action)=>{
+            //    state.movies.results.genre_ids.filter(id => id === action.payload)
+            // },
             changeTheme: (state, action)=>{
                 state.theme = action.payload
-            },
+            }
     },
     extraReducers: builder =>
         builder

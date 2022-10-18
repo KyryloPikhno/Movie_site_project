@@ -1,31 +1,25 @@
 .header,.headerOrange{
-    border-bottom:2px solid orange;
-    width: 100%;
+    width: 886px;
     background: #323232;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px;
-    position: fixed;
-    left: 0;
-    top: 0;
+    height: 160px;
+    flex-wrap: wrap;
+}
+
+.img{
+    width: 150px;
 }
 
 .headerOrange{
     background: orange;
 }
 
-.header input {
-    background: #1d1d1d;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-right: 5px;
-    text-align: center;
-    color: #d6d6d6;
-    height: 20px;
-    width: 220px;
-}
-
-.header button{
-    background: orange;
+.containerForGenreBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px ;
+    gap: 3px;
 }
