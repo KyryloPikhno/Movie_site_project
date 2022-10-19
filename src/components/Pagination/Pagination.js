@@ -6,8 +6,6 @@ import css from './Pagination.module.css'
 const Pagination = ({paginate, searchTotalPages, movieTotalPages}) => {
     const pageNumbers = [];
 
-
-
     // в этой API более 30 000 страниц, но работают всего 500
     movieTotalPages = 500
 

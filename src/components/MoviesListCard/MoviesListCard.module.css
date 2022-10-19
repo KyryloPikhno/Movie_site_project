@@ -9,6 +9,7 @@
     justify-content: center;
     padding: 7px;
     transition: 0.3s;
+    position: relative;
 }
 
 .card:hover{
@@ -28,6 +29,11 @@
     text-align: center;
 }
 
-.stars{
-
+.badgeContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }

@@ -1,4 +1,5 @@
 .header,.headerOrange{
+    margin-top: 50px;
     width: 886px;
     background: #323232;
     display: flex;
@@ -6,6 +7,8 @@
     align-items: center;
     height: 160px;
     flex-wrap: wrap;
+    position: relative;
+
 }
 
 .img{
@@ -18,8 +21,20 @@
 
 .containerForGenreBox{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    /*flex-wrap: wrap;*/
+    /*justify-content: center;*/
+    flex-direction: column;
     padding: 20px ;
-    gap: 3px;
+    gap: 5px;
+    position: absolute;
+    z-index: 1;
+    left:-160px;
+    bottom: -495px;
 }
+
+.containerForGenreBox h3{
+    color: orange;
+    border-left:2px solid orange;
+    border-bottom:2px solid orange;
+}
+

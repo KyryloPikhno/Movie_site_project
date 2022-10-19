@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/react": "^18.0.21",
     "axios": "^0.27.2",
+    "craco-plugin-scoped-css": "^1.1.1",
     "eslint": "8.22.0",
     "pretty-rating-react": "^2.1.1",
     "react": "^18.2.0",
@@ -18,6 +19,7 @@
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
+    "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

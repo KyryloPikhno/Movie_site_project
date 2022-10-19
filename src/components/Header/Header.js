@@ -1,11 +1,12 @@
 import {useDispatch, useSelector} from "react-redux";
-
-import {genreActions, movieActions} from "../../redux/slices";
-import {MoviesSearchForm} from "../MoviesSearchForm/MoviesSearchForm";
-import css from './Header.module.css'
 import {useNavigate} from "react-router-dom";
 import {useEffect} from "react";
 import {GenreBox} from "../GenreBox/GenreBox";
+
+import {genreActions} from "../../redux/slices";
+import {MoviesSearchForm} from "../MoviesSearchForm/MoviesSearchForm";
+import css from './Header.module.css'
+import {ThemeSwitcher} from "../ThemeSwitcher/ThemeSwitcher";
 
 
 const Header = () => {
@@ -14,33 +15,26 @@ const Header = () => {
 
     const dispatch = useDispatch()
 
-    const {theme} = useSelector(state => state.movieReducer)
-
     const {genres} = useSelector(state => state.genreReducer)
 
     useEffect(()=>{
         dispatch(genreActions.getAll())
     },[dispatch])
 
-
-    console.log(genres);
-
-
     return (
-
         <div>
-            <div className={theme? css.headerOrange : css.header}>
-                   <img onClick={()=>navigate('/')} className={css.img} src="https://www.transparentpng.com/thumb/movie/gray-movie-written-icon-png-UpaYYD.png" alt="logo"/>
-                    <button onClick={()=>dispatch(movieActions.changeTheme(true))}>change theme</button>
+            <div className={css.header}>
+                   <img className={css.img} onClick={()=>navigate('/')} src="https://www.transparentpng.com/thumb/movie/gray-movie-written-icon-png-UpaYYD.png" alt="logo"/>
                 <div>
                     <MoviesSearchForm/>
                 </div>
                 <div className={css.containerForGenreBox}>
-                    {genres && genres.map(genre =><GenreBox key={genre.id} genre={genre}/> )}
+                    <h3>GENRES</h3>
+                    {genres && genres.map(genre => <GenreBox key={genre.id} genre={genre}/>)}
                 </div>
+                    <ThemeSwitcher/>
             </div>
         </div>
-
     );
 };
 

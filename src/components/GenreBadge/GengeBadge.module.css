@@ -1,0 +1,10 @@
+.badge{
+    width: 80px;
+    font-size: 12px;
+    text-align: center;
+    background: orange;
+    border-radius: 4px;
+    color: #1d1d1d;
+    border: 1px solid black;
+    box-shadow: 2px 2px 15px black;
+}
