@@ -9,8 +9,10 @@ import css from './MovieInfo.module.css'
 
 const MovieInfo = () => {
 
+    const {currentTheme} = useSelector(state=> state.movieReducer)
+
     const {state} = useLocation()
-    // console.log(state);
+
     const {id, title, overview, release_date, adult, popularity, original_language, original_title, genre_ids, poster_path , backdrop_path, video, vote_count, vote_average} = state
 
     const {genres} = useSelector(state => state.genreReducer)
@@ -20,19 +22,23 @@ const MovieInfo = () => {
     return (
         <div className={css.container}>
                 {backdrop_path && <img  className={css.backdrop} src={`${urls.image_path}${backdrop_path}`} alt={title}/>}
-            <div className={css.box}>
+            <div className={currentTheme === 'dark'? css.box : css.lightBox}>
                 {poster_path && <img className={css.poster} src={`${urls.image_path}${poster_path}`} alt={title}/>}
-                <div className={css.info}>
+                <div className={currentTheme === 'dark'?  css.info : css.lightInfo}>
                     <h1 className={css.title}>{title}</h1>
-                    <p>{release_date}</p>
-                    <p>id: {id}</p>
+                    <p>Original language: {original_language}</p>
+                    <p>Original title: {original_title}</p>
+                    <p>Release date: {release_date}</p>
+                    <p>Age limit: {adult? 'For older 18':'for family viewing'}</p>
+                    <p>Id: {id}</p>
                          <StarsRating  vote_average={vote_average}/>
-                   <p>Popularity: {popularity}</p>
+                    <p>Popularity: {popularity}</p>
+                    <p>Vote count: {vote_count}</p>
                     <p>Overview: {overview}</p>
-                    <p>Adult {adult}</p>
-                    <div>
+                    <div className={css.badges}>
                         {badge && badge.map((genre, index)=> <GenreBadge key={index} genre={genre}/>)}
                     </div>
+                    <p>Video: {video.toString()} :(</p>
                 </div>
             </div>
         </div>

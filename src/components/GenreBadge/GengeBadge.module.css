@@ -5,6 +5,6 @@
     background: orange;
     border-radius: 4px;
     color: #1d1d1d;
-    border: 1px solid black;
-    box-shadow: 2px 2px 15px black;
+    /*border: 1px solid black;*/
+    box-shadow: 1px 1px 7px black;
 }

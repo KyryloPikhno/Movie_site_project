@@ -7,7 +7,8 @@ const initialState = {
     movies: [],
     searchResult: [],
     errors: null,
-    loading: false
+    loading: false,
+    currentTheme: ''
 }
 
 const getAll = createAsyncThunk(
@@ -37,7 +38,11 @@ const search = createAsyncThunk(
 const movieSlice = createSlice({
     name: 'movieSlice',
     initialState,
-    reducers: {},
+    reducers: {
+        newTheme: (state, action)=> {
+            state.currentTheme = action.payload
+        }
+    },
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action)=>{
@@ -45,7 +50,7 @@ const movieSlice = createSlice({
                 state.loading = false
                 state.errors = null
             })
-            .addCase(getAll.pending, (state, action)=>{
+            .addCase(getAll.pending, (state)=>{
                 state.loading = true
                 state.errors = null
             })
@@ -67,11 +72,12 @@ const movieSlice = createSlice({
 
 })
 
-const {reducer: movieReducer, actions:{}} = movieSlice
+const {reducer: movieReducer, actions:{newTheme}} = movieSlice
 
 const movieActions = {
     getAll,
     search,
+    newTheme
 }
 
 export {movieReducer, movieActions}

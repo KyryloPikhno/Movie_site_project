@@ -9,11 +9,14 @@ import css from './Header.module.css'
 import {ThemeSwitcher} from "../ThemeSwitcher/ThemeSwitcher";
 
 
+
 const Header = () => {
 
-    const navigate = useNavigate()
+    const {currentTheme} = useSelector(state=> state.movieReducer)
 
     const dispatch = useDispatch()
+
+    const navigate = useNavigate()
 
     const {genres} = useSelector(state => state.genreReducer)
 
@@ -23,7 +26,7 @@ const Header = () => {
 
     return (
         <div>
-            <div className={css.header}>
+            <div className={currentTheme === 'dark'? css.header : css.lightHeader}>
                    <img className={css.img} onClick={()=>navigate('/')} src="https://www.transparentpng.com/thumb/movie/gray-movie-written-icon-png-UpaYYD.png" alt="logo"/>
                 <div>
                     <MoviesSearchForm/>

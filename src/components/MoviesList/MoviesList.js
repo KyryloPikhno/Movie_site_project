@@ -7,7 +7,10 @@ import {Pagination} from "../Pagination/Pagination";
 import css from './MoviesList.module.css'
 
 
+
+
 const MoviesList = () => {
+
 
     const [currentPage, setCurrentPage] = useState();
 

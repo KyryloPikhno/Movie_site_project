@@ -1,4 +1,4 @@
-.card{
+.card,.lightCard{
     background: #353535;
     color: #d6d6d6;
     text-decoration: none;
@@ -12,10 +12,21 @@
     position: relative;
 }
 
-.card:hover{
+.card:hover,.lightCard:hover{
     background: #3a3a3a;
     transition: 0.2s;
 }
+
+.lightCard{
+    /*background: #d6d6d6;*/
+    background: white;
+    color: #1d1d1d;
+}
+
+.lightCard:hover{
+    background: #d6d6d6;
+}
+
 
 .img{
     width: 200px;
@@ -32,8 +43,8 @@
 .badgeContainer{
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 2px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 4px;
+    left: 4px;
 }

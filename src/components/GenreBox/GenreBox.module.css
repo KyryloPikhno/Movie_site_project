@@ -1,4 +1,4 @@
-.box {
+.box,.lightBox {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,31 @@
     transition: 0.3s;
 }
 
-.box:hover{
-    background: #3a3a3a;
-    transition: 0.2s;
+.box:hover,.lightBox:hover{
+    /*background: #3a3a3a;*/
+    /*transition: 0.3s;*/
+    width: 123px;
 }
+
+.lightBox{
+    color: #1d1d1d;
+    background: white;
+}
+
+/*.lightBox:hover{*/
+/*    background: #d6d6d6;*/
+/*}*/
+
+a[class='GenreBox_box__edaBv active']{
+    background: orange;
+    transition: none;
+    color: #1d1d1d;
+}
+
+a[class='GenreBox_lightBox__wEwT4 active']{
+    background: orange;
+    transition: none;
+    color: #1d1d1d;
+}
+
+
