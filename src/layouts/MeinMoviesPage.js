@@ -3,6 +3,7 @@ import {Outlet} from "react-router-dom";
 import {Header} from "../components";
 import css from './MoviesPage.module.css'
 import {useSelector} from "react-redux";
+import {Footer} from "../components/Footer/Footer";
 
 
 const MeinMoviesPage = () => {
@@ -18,6 +19,9 @@ const MeinMoviesPage = () => {
             </div>
             <div>
                 <Outlet/>
+            </div>
+            <div>
+                <Footer/>
             </div>
         </div>
     );

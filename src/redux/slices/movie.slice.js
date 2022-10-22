@@ -25,9 +25,9 @@ const getAll = createAsyncThunk(
 
 const search = createAsyncThunk(
     'movieSlice/search',
-    async ({title}, {rejectWithValue })=>{
+    async ({title, currentPage}, {rejectWithValue })=>{
         try {
-            const {data} = await movieService.searchByTitle(title)
+            const {data} = await movieService.searchByTitle(title, currentPage)
             return data
         }catch (e){
             return rejectWithValue(e.response.data)
@@ -49,6 +49,7 @@ const movieSlice = createSlice({
                 state.movies = action.payload
                 state.loading = false
                 state.errors = null
+                state.searchResult = []
             })
             .addCase(getAll.pending, (state)=>{
                 state.loading = true

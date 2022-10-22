@@ -4,7 +4,7 @@ import {urls} from "../configs";
 
 const genreService ={
     getAll:()=>axiosService.get(urls.genres),
-    getById:(id)=>axiosService.get(`${urls.movies}${urls.genresById}${id}`)
+    getById:(id, currentPage)=>axiosService.get(`${urls.movies}${urls.genresById}${id}&page=2${currentPage}`)
 }
 
 export {genreService}

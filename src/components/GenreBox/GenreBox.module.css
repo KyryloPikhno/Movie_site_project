@@ -15,17 +15,13 @@
 .box:hover,.lightBox:hover{
     /*background: #3a3a3a;*/
     /*transition: 0.3s;*/
-    width: 123px;
+    width: 122px;
 }
 
 .lightBox{
     color: #1d1d1d;
     background: white;
 }
-
-/*.lightBox:hover{*/
-/*    background: #d6d6d6;*/
-/*}*/
 
 a[class='GenreBox_box__edaBv active']{
     background: orange;
@@ -35,7 +31,7 @@ a[class='GenreBox_box__edaBv active']{
 
 a[class='GenreBox_lightBox__wEwT4 active']{
     background: orange;
-    transition: none;
+    transition: 0.1s;
     color: #1d1d1d;
 }
 

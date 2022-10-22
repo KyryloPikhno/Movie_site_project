@@ -9,7 +9,9 @@
 .loaderContainer{
     display: flex;
     justify-content: center;
-    margin: 150px ;
+    margin-top: 150px;
 }
 
-
+.paginationContainer{
+    margin-left: 223.5px;
+}

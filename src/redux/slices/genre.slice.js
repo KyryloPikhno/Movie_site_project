@@ -24,9 +24,9 @@ const getAll = createAsyncThunk(
 
 const getById = createAsyncThunk(
     'genreSlice/getById',
-    async ({id}, {rejectWithValue}) => {
+    async ({id,currentPage}, {rejectWithValue}) => {
         try {
-            const {data} = await genreService.getById(id)
+            const {data} = await genreService.getById(id,currentPage)
             return data
         }catch (e){
             return rejectWithValue(e.response.data)
@@ -50,7 +50,7 @@ const genreSlice = createSlice({
                 state.loading = false
                 state.errors = null
             })
-            .addCase(getAll.pending, (state, action)=>{
+            .addCase(getAll.pending, (state)=>{
                 state.loading = true
                 state.errors = null
             })

@@ -8,11 +8,11 @@ function App() {
   return (
         <Routes>
             <Route path={'/'} element={<MeinMoviesPage/>}>
-                   <Route index element={<Navigate to={'page/:number'}/>}/>
-                <Route path={'/page/:number'} element={<MoviesListPage/>}/>
-                   <Route path={'/page/:number/info/:id'} element={<MovieInfoPage/>}/>
-                <Route path={'/genre/:id'} element={<GenrePage/>}/>
-                   <Route path={'/genre/:id/info/:id'} element={<MovieInfoPage/>}/>
+                   <Route index element={<Navigate to={'/all_movies/page/1'}/>}/>
+                <Route path={'/all_movies/page/:number'} element={<MoviesListPage/>}/>
+                   <Route path={'/all_movies/page/:number/info/:id'} element={<MovieInfoPage/>}/>
+                <Route path={'/genre/:id/page/:number'} element={<GenrePage/>}/>
+                   <Route path={'/genre/:id/page/:number/info/:id'} element={<MovieInfoPage/>}/>
             </Route>
               <Route path={'*'} element={<NotFoundPage/>}/>
         </Routes>

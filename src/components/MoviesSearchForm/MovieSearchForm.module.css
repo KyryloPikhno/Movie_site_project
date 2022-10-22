@@ -16,13 +16,20 @@
     color: #1d1d1d;
 }
 
-.button,.lightButton{
+.button,.lightButton,.noValidButton{
     box-sizing: border-box;
     background: black;
     color: white;
     width: 65px;
     border: 1px solid white;
     height: 25px;
+    transition: 1s;
+}
+
+.noValidButton{
+    background: gray;
+    border: 1px solid gray;
+    transition: 1s;
 }
 
 .lightButton{
@@ -30,3 +37,4 @@
     color: black;
     border: 1px solid black;
 }
+

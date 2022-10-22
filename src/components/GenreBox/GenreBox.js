@@ -8,9 +8,8 @@ const GenreBox = ({genre}) => {
 
     const {currentTheme} = useSelector(state=> state.movieReducer)
 
-
     return (
-        <NavLink className={currentTheme === 'dark'? css.box : css.lightBox } to={`genre/${genre.id}`} state={{...genre}}>
+        <NavLink className={currentTheme === 'dark'? css.box : css.lightBox } to={`genre/${genre.id}/page/1`}>
             {genre.name}
         </NavLink>
     );

@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {useEffect} from "react";
 import {GenreBox} from "../GenreBox/GenreBox";
 
@@ -9,14 +9,13 @@ import css from './Header.module.css'
 import {ThemeSwitcher} from "../ThemeSwitcher/ThemeSwitcher";
 
 
-
 const Header = () => {
 
     const {currentTheme} = useSelector(state=> state.movieReducer)
 
     const dispatch = useDispatch()
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     const {genres} = useSelector(state => state.genreReducer)
 
@@ -27,12 +26,14 @@ const Header = () => {
     return (
         <div>
             <div className={currentTheme === 'dark'? css.header : css.lightHeader}>
-                   <img className={css.img} onClick={()=>navigate('/')} src="https://www.transparentpng.com/thumb/movie/gray-movie-written-icon-png-UpaYYD.png" alt="logo"/>
+                   <NavLink to={`/`}>
+                         <img className={css.img}  src="https://www.transparentpng.com/thumb/movie/gray-movie-written-icon-png-UpaYYD.png" alt="logo"/>
+                   </NavLink>
                 <div>
                     <MoviesSearchForm/>
                 </div>
                 <div className={css.containerForGenreBox}>
-                    <h3>GENRES</h3>
+                    {genres &&  <h3>GENRES</h3>}
                     {genres && genres.map(genre => <GenreBox key={genre.id} genre={genre}/>)}
                 </div>
                     <ThemeSwitcher/>
