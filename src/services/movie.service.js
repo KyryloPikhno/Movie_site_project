@@ -9,5 +9,3 @@ const movieService = {
  }
 
  export {movieService}
-
-// https://api.themoviedb.org/3/search/movie?query=

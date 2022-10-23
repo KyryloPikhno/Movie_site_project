@@ -1,9 +1,9 @@
-import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
+import {StarsRating} from "../StarsRating/StarsRating";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
 import {urls} from "../../configs";
-import {StarsRating} from "../StarsRating/StarsRating";
 import css from './MoviesListCard.module.css'
 
 

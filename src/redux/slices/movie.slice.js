@@ -46,10 +46,10 @@ const movieSlice = createSlice({
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action)=>{
+                state.searchResult = []
                 state.movies = action.payload
                 state.loading = false
                 state.errors = null
-                state.searchResult = []
             })
             .addCase(getAll.pending, (state)=>{
                 state.loading = true

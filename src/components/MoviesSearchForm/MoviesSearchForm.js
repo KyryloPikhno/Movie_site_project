@@ -15,9 +15,6 @@ const MoviesSearchForm = () => {
 
     const [currentPage] = useLocalStorage('page');
 
-    // const {number} = useParams()
-    // console.log(number);
-
     const {currentTheme} = useSelector(state => state.movieReducer)
 
     const navigate = useNavigate()
@@ -31,7 +28,7 @@ const MoviesSearchForm = () => {
 
     const submit = ({title}) =>{
             dispatch(movieActions.search({title}))
-            navigate('/')
+            navigate('/all_movies/page/1')
             reset()
     }
 

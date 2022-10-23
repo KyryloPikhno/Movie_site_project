@@ -65,7 +65,7 @@ const genreSlice = createSlice({
             })
 })
 
-const {reducer: genreReducer, actions:{}} = genreSlice
+const {reducer: genreReducer} = genreSlice
 
 const genreActions ={
     getAll,

@@ -8,4 +8,3 @@ const genreService ={
 }
 
 export {genreService}
-// https://api.themoviedb.org/3/discover/movie?&with_genres=28

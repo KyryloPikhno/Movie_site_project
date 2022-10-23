@@ -1,9 +1,9 @@
 import useLocalStorage from 'use-local-storage'
-import {useEffect} from "react";
 import {useDispatch} from "react-redux";
+import {useEffect} from "react";
+
 import {movieActions} from "../../redux/slices";
 import css from './ThemeSwitcher.module.css'
-
 
 
 const ThemeSwitcher = () => {

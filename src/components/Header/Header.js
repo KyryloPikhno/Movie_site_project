@@ -1,12 +1,13 @@
 import {useDispatch, useSelector} from "react-redux";
 import {NavLink} from "react-router-dom";
 import {useEffect} from "react";
-import {GenreBox} from "../GenreBox/GenreBox";
 
-import {genreActions} from "../../redux/slices";
+import {GenreBox} from "../GenreBox/GenreBox";
+import {genreActions, userActions} from "../../redux/slices";
 import {MoviesSearchForm} from "../MoviesSearchForm/MoviesSearchForm";
-import css from './Header.module.css'
 import {ThemeSwitcher} from "../ThemeSwitcher/ThemeSwitcher";
+import {UserInfo} from "../UserInfo/UserInfo";
+import css from './Header.module.css'
 
 
 const Header = () => {
@@ -15,16 +16,21 @@ const Header = () => {
 
     const dispatch = useDispatch()
 
-    // const navigate = useNavigate()
-
     const {genres} = useSelector(state => state.genreReducer)
+
+    const {user} = useSelector(state => state.userReducer)
+
+    console.log(user);
 
     useEffect(()=>{
         dispatch(genreActions.getAll())
     },[dispatch])
 
+    useEffect(()=>{
+        dispatch(userActions.getUser())
+    },[dispatch])
+
     return (
-        <div>
             <div className={currentTheme === 'dark'? css.header : css.lightHeader}>
                    <NavLink to={`/`}>
                          <img className={css.img}  src="https://www.transparentpng.com/thumb/movie/gray-movie-written-icon-png-UpaYYD.png" alt="logo"/>
@@ -37,8 +43,8 @@ const Header = () => {
                     {genres && genres.map(genre => <GenreBox key={genre.id} genre={genre}/>)}
                 </div>
                     <ThemeSwitcher/>
+                    <UserInfo user={user}/>
             </div>
-        </div>
     );
 };
 

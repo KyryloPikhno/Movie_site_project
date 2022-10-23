@@ -1,12 +1,13 @@
-import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
-import {genreActions} from "../../redux/slices";
-import {MoviesListCard} from "../../components";
-import css from './MovieListByGenre.module.css'
-import {Pagination} from "../Pagination/Pagination";
 import useLocalStorage from "use-local-storage";
+import {useParams} from "react-router-dom";
+import {useEffect} from "react";
+
+import {MoviesListCard} from "../../components";
+import {genreActions} from "../../redux/slices";
+import {Pagination} from "../Pagination/Pagination";
 import {Loader} from "../Loader/Loader";
+import css from './MovieListByGenre.module.css'
 
 
 

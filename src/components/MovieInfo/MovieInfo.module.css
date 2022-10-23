@@ -14,12 +14,10 @@
 .box,.lightBox{
     display: flex;
     background: #3a3a3a;
-
 }
 
 .lightBox{
     background: white;
-
 }
 
 .poster{

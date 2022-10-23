@@ -1,6 +1,6 @@
-import PrettyRating from "pretty-rating-react";
 import {faStar, faStarHalfAlt} from "@fortawesome/free-solid-svg-icons";
 import {faStar as farStar} from "@fortawesome/free-regular-svg-icons";
+import PrettyRating from "pretty-rating-react";
 
 
 const icons = {

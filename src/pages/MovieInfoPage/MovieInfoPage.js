@@ -1,5 +1,6 @@
 import {MovieInfo} from "../../components";
 
+
 const MovieInfoPage = () => {
 
 

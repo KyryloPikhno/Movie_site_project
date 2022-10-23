@@ -1,12 +1,12 @@
 import {useDispatch, useSelector} from "react-redux";
+import useLocalStorage from "use-local-storage";
 import {useEffect} from "react";
 
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 import {movieActions} from "../../redux/slices";
 import {Pagination} from "../Pagination/Pagination";
-import css from './MoviesList.module.css'
-import useLocalStorage from "use-local-storage";
 import {Loader} from "../Loader/Loader";
+import css from './MoviesList.module.css'
 
 
 const MoviesList = () => {

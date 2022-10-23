@@ -1,6 +1,5 @@
-import css from './NotFoundPage.module.css'
 import {MoviesSearchForm} from "../../components/MoviesSearchForm/MoviesSearchForm";
-
+import css from './NotFoundPage.module.css'
 
 
 const NotFoundPage = () => {

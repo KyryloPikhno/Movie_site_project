@@ -1,7 +1,7 @@
+import {useSelector} from "react-redux";
 import {NavLink} from "react-router-dom";
 
 import css from './GenreBox.module.css'
-import {useSelector} from "react-redux";
 
 
 const GenreBox = ({genre}) => {
