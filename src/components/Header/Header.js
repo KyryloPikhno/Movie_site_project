@@ -20,8 +20,6 @@ const Header = () => {
 
     const {user} = useSelector(state => state.userReducer)
 
-    console.log(user);
-
     useEffect(()=>{
         dispatch(genreActions.getAll())
     },[dispatch])

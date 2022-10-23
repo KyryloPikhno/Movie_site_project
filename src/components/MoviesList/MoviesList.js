@@ -15,10 +15,6 @@ const MoviesList = () => {
 
     const{movies, loading, errors, searchResult} = useSelector(state => state.movieReducer)
 
-    console.log(searchResult);
-
-    console.log(movies);
-
     let searchTotalPages = searchResult.total_pages
     let movieTotalPages = movies.total_pages
 

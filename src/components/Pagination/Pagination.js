@@ -10,7 +10,7 @@ const Pagination = ({paginate, searchTotalPages, movieTotalPages, genreTotalPage
 
     const {id} = useParams()
 
-    // в этой API более 30 000 страниц, но работают всего 500
+    // this API gives only 500 pages
     movieTotalPages = 500
 
     for (let i = 1; i <= Math.ceil(searchTotalPages  || genreTotalPage || movieTotalPages); i++) {

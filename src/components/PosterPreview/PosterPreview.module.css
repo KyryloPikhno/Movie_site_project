@@ -1,0 +1,49 @@
+.poster {
+    display: flex;
+}
+
+.poster button{
+    display: none;
+}
+
+.currentPoster{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: end;
+}
+
+.poster.active{
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 70%);
+}
+
+.poster.active img{
+    width: 600px;
+    height: 700px;
+}
+
+.poster.active button{
+    display: block;
+    box-sizing: border-box;
+    background: orange;
+    color: black;
+    width: 110px;
+    border: 1px solid red;
+    height: 25px;
+    transition: .2s;
+}
+
+.poster.active button:hover{
+    background: red;
+    color: white;
+    transition: .2s;
+}
+

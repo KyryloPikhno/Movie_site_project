@@ -19,13 +19,10 @@
 .lightHeader{
     background: white;
     transition: 0.3s;
-
 }
 
 .containerForGenreBox{
     display: flex;
-    /*flex-wrap: wrap;*/
-    /*justify-content: center;*/
     flex-direction: column;
     padding: 20px ;
     gap: 5px;
@@ -40,7 +37,6 @@
     width: 118px;
     text-align: center;
     color: orange;
-    /*border-left:2px solid orange;*/
     border-bottom:2px solid orange;
 }
 
