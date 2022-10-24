@@ -1,11 +1,11 @@
 import {useDispatch, useSelector} from "react-redux";
-import {NavLink} from "react-router-dom";
 import {useEffect} from "react";
+import {NavLink} from "react-router-dom";
 
-import {GenreBox} from "../GenreBox/GenreBox";
 import {genreActions, userActions} from "../../redux/slices";
 import {MoviesSearchForm} from "../MoviesSearchForm/MoviesSearchForm";
 import {ThemeSwitcher} from "../ThemeSwitcher/ThemeSwitcher";
+import {GenreBox} from "../GenreBox/GenreBox";
 import {UserInfo} from "../UserInfo/UserInfo";
 import css from './Header.module.css'
 
@@ -30,9 +30,9 @@ const Header = () => {
 
     return (
             <div className={currentTheme === 'dark'? css.header : css.lightHeader}>
-                   <NavLink to={`/`}>
+                <NavLink to={'/'}>
                          <img className={css.img}  src="https://www.transparentpng.com/thumb/movie/gray-movie-written-icon-png-UpaYYD.png" alt="logo"/>
-                   </NavLink>
+                </NavLink>
                 <div>
                     <MoviesSearchForm/>
                 </div>

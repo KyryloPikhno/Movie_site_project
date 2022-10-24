@@ -1,14 +1,13 @@
-import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
+import useLocalStorage from "use-local-storage";
 import {useNavigate} from "react-router-dom"
 import {joiResolver} from "@hookform/resolvers/joi";
+import {useEffect} from "react";
+import {useForm} from "react-hook-form";
+
+import {movieValidator} from "../../validators";
 import {movieActions} from "../../redux/slices";
 import css from './MovieSearchForm.module.css'
-import {useEffect} from "react";
-import useLocalStorage from "use-local-storage";
-import {movieValidator} from "../../validators";
-
-
 
 
 const MoviesSearchForm = () => {
